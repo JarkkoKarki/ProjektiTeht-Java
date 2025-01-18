@@ -56,11 +56,11 @@ public class Fifo {
             if (command == 1) {
                 Fifo customer = new Fifo();
                 customer.setStartTime(System.currentTimeMillis());
-                queue.addLast(customer);
+                queue.addFirst(customer);
                 System.out.println("Added Customer to a line. id: " + customer.getId() );
             } else if (command == 2 ) {
                 if (!queue.isEmpty()) {
-                    Fifo customer = queue.removeFirst();
+                    Fifo customer = queue.removeLast();
                     customer.setEndTime(System.currentTimeMillis());
                     System.out.println("Removed Customer. id: " + customer.getId() + " from the line. Time: " + customer.calculateTime() + " ms");
                 } else {

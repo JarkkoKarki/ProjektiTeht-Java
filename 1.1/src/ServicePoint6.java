@@ -50,13 +50,13 @@ class ServicePoint2 {
                 long currentTime = System.currentTimeMillis();
                 long waitingTime = currentTime - customer.getArrivalTime();
 
-                // Simulate service time
+                // service time
                 int serviceTime = random.nextInt(3000) + 1000; // 1-3 seconds
                 totalServiceTime += serviceTime;
                 customersServed++;
 
                 try {
-                    Thread.sleep(serviceTime); // Simulate actual service time
+                    Thread.sleep(serviceTime); // Simulate service time
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                     return;
@@ -75,7 +75,6 @@ class ServicePoint2 {
     }
 }
 
-// Class to create and add customers to the ServicePoint
 class CustomerGenerator6 {
     public void generateCustomers(ServicePoint2 servicePoint, int numberOfCustomers) {
         for (int i = 1; i <= numberOfCustomers; i++) {
@@ -86,7 +85,6 @@ class CustomerGenerator6 {
     }
 }
 
-// Main class to run the program
 public class ServicePoint6 {
     public static void main(String[] args) {
         ServicePoint2 servicePoint = new ServicePoint2();

@@ -69,31 +69,6 @@ public class Fifo {
             }
 
         }
-
-        /*
-        LinkedList<Customer> queue = new LinkedList<>();
-        queue.addFirst(customer);
-        queue.addFirst(customer2);
-        //Tyhjätään jono
-
-        while (!queue.isEmpty()) {
-            Customer c = queue.removeLast();
-            System.out.println("Asiakkaalla " + c.getId() + " meni " + c.calculateTime() + " ms");
-        }
-
-        */
-        /*
-        TAI
-
-        int size = queue.size();
-        for (int i=0; i<size; i++) {
-            Customer c = queue.removeLast();
-            System.out.println("Asiakkaalla " + c.getId() + " meni " + c.calculateTime() + " ms");
-        }
-
-         */
-
-
     }
 
 

@@ -81,9 +81,10 @@ public class CallCenterSimulation {
     private static int workCompleteY = 0;
 
     public static void main(String[] args) {
+        //Luodaan eventlist
         EventList eventList = new EventList();
 
-        // Pää tapahtumat (asiakkaat)
+        // Tapahtumat (asiakkaat)
         eventList.addEvent(new Event(5, EventType.ARRIVAL, "X"));
         eventList.addEvent(new Event(10, EventType.ARRIVAL, "Y"));
 
@@ -101,10 +102,11 @@ public class CallCenterSimulation {
         double clock = 0;
 
         while (!eventList.isEmpty()) {
-            // Jatkuu kunnes kummatkin pääsee pois
+            // Jatkuu kunnes kummatkin tyypit saavat työn valmiiksi
             while (workCompleteX <= 1 && workCompleteY <= 1) {
                 // Siirrytään seuraavaan tapahtumaan
                 Event nextEvent = eventList.removeNextEvent();
+                //Lisätään kelloon aika tapahtumasta
                 clock = nextEvent.getEventTime();
 
                 // Tulostetaan tiedot
@@ -117,7 +119,7 @@ public class CallCenterSimulation {
                 System.out.println("Work Complete (Y): " + workCompleteY);
                 System.out.println("---------------");
 
-                // Siirrytään tapahtumiin (ARRIVAL tai EXIT)
+                // Siirrytään tapahtumiin (ARRIVAL tai EXIT) tyypin mukaan
                 if (nextEvent.getEventType() == EventType.ARRIVAL) {
                     // Lisätään jonoon
                     routerQueue += nextEvent.getClientType() + " ";
